@@ -1,20 +1,21 @@
-
 import { PosterCard } from "../PosterCard/PosterCard";
 import { GridList } from "../../../styled/Elements";
-import { usePostersByGenre } from "../../../hooks/usePosters";
+import { usePostersByGenre, useRandomPosters } from "../../../hooks/usePosters";
 import { useParams } from "react-router-dom";
 
-export const PosterList = () => {
-    const { genreSlug } = useParams()
-    const { posters } = usePostersByGenre({ genre: String(genreSlug) })
+export const PosterList = ({ mode = "byGenre" }: { mode?: string }) => {
+  const { genreSlug } = useParams();
 
-    return (
-        <GridList>
-            {posters.map(item => {
-                return (
-                    <PosterCard key={item.id} {...item} />
-                )
-            })}
-        </GridList>
-    );
+  const { posters } =
+    mode === "byGenre"
+      ? usePostersByGenre({ genre: String(genreSlug) })
+      : useRandomPosters();
+
+  return (
+    <GridList>
+      {posters.map((item) => {
+        return <PosterCard key={item.id} {...item} />;
+      })}
+    </GridList>
+  );
 };

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Footer } from "../components/partials/Footer/Footer"
 import { Header } from "../components/partials/Header/Header"
-import { ContainerStyle } from "../styled/Container.style"
+import { ContainerStyle } from "../styled/Elements"
 
 export const MainLayout = () => {
     return (

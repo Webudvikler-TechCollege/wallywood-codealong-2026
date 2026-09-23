@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage/HomePage.tsx'
 import { PosterList } from './components/modules/PosterList/PosterList.tsx'
 import { PosterDetails } from './components/modules/PosterDetails/PosterDetails.tsx'
 import { PosterPage } from './pages/PosterPage/PosterPage.tsx'
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage.tsx'
 
 export const App = () => {
    return (
@@ -14,6 +15,7 @@ export const App = () => {
             <Route path=":genreSlug" element={<PosterList />} />
             <Route path=":genreSlug/:posterSlug" element={<PosterDetails />} />
           </Route>
+          <Route path='*' element={<NotFoundPage />} />
         </Route>
      </Routes>
    )

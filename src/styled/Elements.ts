@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Reset } from "./Mixins";
 
+interface ContainerProps {
+	$maxwidth?: number
+}
+
 export const Hero = styled.img`
     width: 100%;
 `;
@@ -26,4 +30,15 @@ export const GridList = styled.ul<GridProps>`
 	}    
 `;
 
+export const ContainerStyle = styled.section<ContainerProps>`
+	background-color: ${props => props.theme.colors.light};
+	width: 100%;
+	max-width: ${props => props.$maxwidth}px;
+	margin: 0 auto;
+	padding: 0rem 2.3rem;
+
+	@media screen and (width < 820px) {
+		padding: 0rem 1rem;		
+	}
+`
 

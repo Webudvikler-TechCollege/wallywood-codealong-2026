@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		background-color: ${({ theme }) => theme.colors.primary};
+		font-size: ${({ theme }) => theme.fontsizes.m};
 		${Reset};
 	}
 
