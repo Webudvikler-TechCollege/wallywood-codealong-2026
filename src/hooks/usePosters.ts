@@ -10,6 +10,19 @@ export interface PosterQuery {
     random?: boolean
 }
 
+// Hook til at hente en liste af alle plakater.
+// Returnerer poster-array, loading-status og eventuelle fejl.
+export const usePosters = () => {
+    const { data, error } = useFetch<Poster[]>(`${API_URL}/posters`)
+
+    return {
+        posters: data ?? [],
+        isLoading: data === null && error === null,
+        error
+    }
+}
+
+
 // Hook til at hente en liste af random sorterede plakater.
 // Returnerer poster-array, loading-status og eventuelle fejl.
 export const useRandomPosters = () => {

@@ -1,10 +1,12 @@
 
 import { PosterCard } from "../PosterCard/PosterCard";
 import { GridList } from "../../../styled/Elements";
-import { useRandomPosters } from "../../../hooks/usePosters";
+import { usePostersByGenre } from "../../../hooks/usePosters";
+import { useParams } from "react-router-dom";
 
 export const PosterList = () => {
-    const { posters } = useRandomPosters()
+    const { genreSlug } = useParams()
+    const { posters } = usePostersByGenre({ genre: String(genreSlug) })
 
     return (
         <GridList>

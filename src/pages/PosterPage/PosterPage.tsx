@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { PosterPageStyled } from "./PosterPage.styled";
+import { GenreList } from "../../components/modules/GenreList/GenreList";
 
 export const PosterPage = () => {
   return (
     <PosterPageStyled>
         <div>
-            Genre list
+            <GenreList />
         </div>
         <div>
             <Outlet />

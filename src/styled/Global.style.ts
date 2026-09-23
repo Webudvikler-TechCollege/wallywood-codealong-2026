@@ -26,5 +26,9 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 1.5rem;
 		margin-block: 0rem;
 	}
+
+	.active {
+		color: #f00;
+	}
 `
 export { GlobalStyle, Reset }
